@@ -1,0 +1,322 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Awaam Ki Almirah — Premium Fashion Lahore</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+<style>
+:root{
+--bg:#0f0f0f;
+--card:rgba(255,255,255,0.05);
+--glass:rgba(255,255,255,0.06);
+--text:#f3f3f3;
+--gold:#d4af37;
+--gold-light:#f1d47b;
+--radius:20px;
+}
+
+*{box-sizing:border-box;margin:0;padding:0}
+body{
+font-family:Poppins, sans-serif;
+background:var(--bg);
+color:var(--text);
+min-height:100vh;
+padding-top:80px;
+overflow-x:hidden;
+}
+
+/* HEADER */
+header{
+position:fixed;
+top:0;left:0;right:0;
+background:var(--glass);
+backdrop-filter:blur(20px);
+display:flex;
+justify-content:space-between;
+align-items:center;
+padding:18px 40px;
+z-index:100;
+border-bottom:1px solid rgba(255,255,255,0.1);
+}
+
+header h1{
+font-size:26px;
+font-weight:800;
+background:linear-gradient(135deg,var(--gold),var(--gold-light));
+-webkit-background-clip:text;
+-webkit-text-fill-color:transparent;
+}
+
+nav a{
+margin-left:25px;
+text-decoration:none;
+color:#ddd;
+font-weight:500;
+transition:0.3s;
+}
+
+nav a:hover{
+color:var(--gold);
+}
+
+/* HERO */
+.hero{
+text-align:center;
+padding:100px 20px 60px;
+}
+
+.hero h2{
+font-size:clamp(36px,6vw,64px);
+margin-bottom:15px;
+background:linear-gradient(135deg,var(--gold),#ffffff);
+-webkit-background-clip:text;
+-webkit-text-fill-color:transparent;
+}
+
+.hero p{
+opacity:0.8;
+font-size:18px;
+}
+
+/* PRODUCTS */
+.container{
+max-width:1300px;
+margin:auto;
+padding:40px 20px;
+}
+
+.products{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+gap:30px;
+}
+
+.product{
+background:var(--card);
+border-radius:var(--radius);
+padding:18px;
+backdrop-filter:blur(25px);
+transition:0.4s;
+position:relative;
+overflow:hidden;
+}
+
+.product:hover{
+transform:translateY(-8px);
+box-shadow:0 20px 50px rgba(212,175,55,0.2);
+}
+
+.product img{
+width:100%;
+border-radius:14px;
+margin-bottom:15px;
+}
+
+.product h3{
+margin-bottom:6px;
+}
+
+.product p{
+font-size:13px;
+opacity:0.7;
+margin-bottom:10px;
+}
+
+.price{
+font-size:20px;
+font-weight:700;
+color:var(--gold);
+}
+
+.product button{
+margin-top:12px;
+width:100%;
+padding:10px;
+border:none;
+border-radius:30px;
+background:linear-gradient(135deg,var(--gold),var(--gold-light));
+font-weight:600;
+cursor:pointer;
+transition:0.3s;
+}
+
+.product button:hover{
+transform:scale(1.05);
+}
+
+/* CART PANEL */
+.cart{
+position:fixed;
+right:-400px;
+top:0;
+width:360px;
+height:100%;
+background:#141414;
+box-shadow:-20px 0 60px rgba(0,0,0,0.8);
+padding:25px;
+transition:0.5s;
+z-index:200;
+display:flex;
+flex-direction:column;
+}
+
+.cart.active{right:0;}
+
+.cart-items{
+flex:1;
+overflow-y:auto;
+margin-top:20px;
+}
+
+.cart-item{
+display:flex;
+justify-content:space-between;
+margin-bottom:10px;
+font-size:14px;
+}
+
+.cart-total{
+margin-top:20px;
+font-size:20px;
+font-weight:700;
+color:var(--gold);
+}
+
+.cart-btn{
+background:linear-gradient(135deg,var(--gold),var(--gold-light));
+border:none;
+padding:8px 18px;
+border-radius:30px;
+cursor:pointer;
+font-weight:600;
+}
+
+/* FLOATING WHATSAPP */
+.fab{
+position:fixed;
+bottom:25px;
+right:25px;
+background:#25D366;
+color:white;
+padding:14px 20px;
+border-radius:50px;
+font-weight:600;
+text-decoration:none;
+box-shadow:0 10px 25px rgba(0,0,0,0.4);
+}
+
+/* FOOTER */
+footer{
+text-align:center;
+padding:30px;
+opacity:0.6;
+font-size:14px;
+}
+
+@media(max-width:600px){
+header{padding:15px 20px}
+}
+</style>
+</head>
+<body>
+
+<header>
+<h1>Awaam Ki Almirah</h1>
+<nav>
+<a href="#">Men</a>
+<a href="#">Women</a>
+<a href="#">Kids</a>
+<button class="cart-btn" onclick="toggleCart()">Cart (<span id="count">0</span>)</button>
+</nav>
+</header>
+
+<section class="hero">
+<h2>Lahore's Premium Fashion Destination</h2>
+<p>Traditional • Modern • Casual • Formal • For Everyone</p>
+</section>
+
+<div class="container">
+<div class="products" id="productGrid"></div>
+</div>
+
+<div class="cart" id="cartPanel">
+<h2>Your Cart</h2>
+<div class="cart-items" id="cartItems"></div>
+<div class="cart-total">Total: Rs <span id="total">0</span></div>
+</div>
+
+<a href="https://wa.me/923001234567" class="fab">WhatsApp Support</a>
+
+<footer>
+© 2026 Awaam Ki Almirah — Lahore, Pakistan
+</footer>
+
+<script>
+const products = [
+{name:"Men's Kurta",price:3500,img:1,desc:"Premium cotton kurta for men."},
+{name:"Women's Lawn Suit",price:4200,img:2,desc:"Elegant stitched lawn suit."},
+{name:"Kids Shalwar Kameez",price:2800,img:3,desc:"Comfortable outfit for kids."},
+{name:"Formal Shirt",price:3000,img:4,desc:"Slim fit formal shirt."},
+{name:"Abaya Collection",price:6500,img:5,desc:"Luxury abaya for women."},
+{name:"Denim Jeans",price:3800,img:6,desc:"Classic fit denim jeans."}
+];
+
+const grid=document.getElementById("productGrid");
+const cartPanel=document.getElementById("cartPanel");
+const cartItems=document.getElementById("cartItems");
+const totalEl=document.getElementById("total");
+const countEl=document.getElementById("count");
+
+let cart=JSON.parse(localStorage.getItem("almirahCart"))||[];
+
+function renderProducts(){
+grid.innerHTML=products.map((p,i)=>`
+<div class="product">
+<img src="https://picsum.photos/500/400?random=${p.img}">
+<h3>${p.name}</h3>
+<p>${p.desc}</p>
+<div class="price">Rs ${p.price}</div>
+<button onclick="addToCart(${i})">Add to Cart</button>
+</div>
+`).join("");
+}
+
+function renderCart(){
+cartItems.innerHTML="";
+let total=0;
+cart.forEach((p,i)=>{
+total+=p.price;
+cartItems.innerHTML+=`
+<div class="cart-item">
+<span>${p.name}</span>
+<span onclick="removeItem(${i})" style="cursor:pointer;">✕</span>
+</div>`;
+});
+totalEl.textContent=total;
+countEl.textContent=cart.length;
+localStorage.setItem("almirahCart",JSON.stringify(cart));
+}
+
+function addToCart(i){
+cart.push(products[i]);
+renderCart();
+}
+
+function removeItem(i){
+cart.splice(i,1);
+renderCart();
+}
+
+function toggleCart(){
+cartPanel.classList.toggle("active");
+}
+
+renderProducts();
+renderCart();
+</script>
+
+</body>
+</html>

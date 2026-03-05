@@ -1429,7 +1429,7 @@ function orderWhatsApp() {
   const lines = cart.map(i => `• ${i.name} × ${i.qty} = Rs ${(i.price * i.qty).toLocaleString()}`).join('%0A');
   const total = cart.reduce((s, i) => s + i.price * i.qty, 0);
   const msg = `Assalam o Alaikum! I'd like to order:%0A${lines}%0A%0ATotal: Rs ${total.toLocaleString()}`;
-  window.open(`https://wa.me/923001234567?text=${msg}`, '_blank');
+  window.open(`https://wa.me/923364439851?text=${msg}`, '_blank');
 }
 
 // ─── Toast ───
@@ -1465,4 +1465,5 @@ renderCart();
 </script>
 </body>
 </html>
+
 

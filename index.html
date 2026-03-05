@@ -98,21 +98,23 @@ header {
 .logo-urdu {
   font-family: 'Playfair Display', serif;
   font-style: italic;
-  font-size: 14px;
+  font-size: 20px;
   letter-spacing: 4px;
   color: var(--gold-mid);
   text-transform: uppercase;
   opacity: 0.8;
   margin-bottom: 2px;
 }
-.logo-sub {
-  font-family: 'Cormorant Garamond', serif;
-  font-size: 8px;
-  letter-spacing: 6px;
-  color: var(--ivory-dim);
+.logo-main {
+  font-family: 'Cinzel', serif;
+  font-size: 22px;
+  font-weight: 700;
+  letter-spacing: 3px;
+  background: linear-gradient(135deg, var(--gold) 0%, var(--gold-shine) 50%, var(--gold-mid) 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
   text-transform: uppercase;
-  margin-top: 3px;
-  opacity: 0.6;
 }
 
 nav {
@@ -1108,7 +1110,7 @@ footer {
 <header>
   <div class="logo-wrap">
     <span class="logo-urdu">عوام کی الماری</span>
-    <span class="logo-sub">House of Timeless Fashion · Est. Lahore</span>
+    <span class="logo-main">Awaam Ki Almirah</span>
   </div>
   <nav>
     <a href="#">Men</a>
@@ -1417,7 +1419,7 @@ function orderWhatsApp() {
   const lines = cart.map(i => `• ${i.name} × ${i.qty} = Rs ${(i.price * i.qty).toLocaleString()}`).join('%0A');
   const total = cart.reduce((s, i) => s + i.price * i.qty, 0);
   const msg = `Assalam o Alaikum! I'd like to order:%0A${lines}%0A%0ATotal: Rs ${total.toLocaleString()}`;
-  window.open(`https://wa.me/923364439851?text=${msg}`, '_blank');
+  window.open(`https://wa.me/923664439851?text=${msg}`, '_blank');
 }
 
 // ─── Toast ───
@@ -1453,6 +1455,3 @@ renderCart();
 </script>
 </body>
 </html>
-
-
-

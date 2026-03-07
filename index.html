@@ -5,7 +5,6 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Awaam Ki Almirah — House of Timeless Fashion</title>
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400;1,700&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&family=Cinzel:wght@400;600;700&family=IM+Fell+English:ital@0;1&display=swap" rel="stylesheet">
-
 <style>
 :root {
   --bg-deep:     #0a0804;
@@ -24,7 +23,6 @@
   --radius:      4px;
   --shadow-gold: 0 0 40px rgba(201,146,42,0.15);
 }
-
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 html { scroll-behavior: smooth; }
 body {
@@ -44,13 +42,10 @@ body::before {
   z-index: 9999;
   opacity: 0.5;
 }
-
 .deco-line { display: flex; align-items: center; gap: 16px; justify-content: center; margin: 10px 0; }
 .deco-line::before, .deco-line::after { content: ''; flex: 1; max-width: 120px; height: 1px; background: linear-gradient(to right, transparent, var(--gold-mid)); }
 .deco-line::after { background: linear-gradient(to left, transparent, var(--gold-mid)); }
 .deco-diamond { width: 8px; height: 8px; background: var(--gold-mid); transform: rotate(45deg); flex-shrink: 0; }
-
-/* HEADER */
 header { position: fixed; top: 0; left: 0; right: 0; z-index: 500; background: linear-gradient(180deg, rgba(10,8,4,0.98) 0%, rgba(10,8,4,0.85) 100%); backdrop-filter: blur(20px); border-bottom: 1px solid var(--border); padding: 0 48px; height: 78px; display: flex; align-items: center; justify-content: space-between; }
 .logo-wrap { display: flex; flex-direction: column; line-height: 1; }
 .logo-urdu { font-family: 'Playfair Display', serif; font-style: italic; font-size: 20px; letter-spacing: 4px; color: var(--gold-mid); text-transform: uppercase; opacity: 0.8; margin-bottom: 2px; }
@@ -66,8 +61,6 @@ nav a:hover::after { transform: scaleX(1); }
 .cart-trigger:hover::before { opacity: 1; }
 .cart-trigger span { position: relative; z-index: 1; }
 .cart-count { background: var(--gold-mid); color: var(--bg-deep); font-size: 9px; font-weight: 700; width: 18px; height: 18px; border-radius: 50%; display: flex; align-items: center; justify-content: center; position: relative; z-index: 1; font-family: 'Cinzel', serif; }
-
-/* HERO */
 .hero { padding-top: 78px; min-height: 100vh; display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center; position: relative; overflow: hidden; }
 .hero-bg { position: absolute; inset: 0; background: radial-gradient(ellipse 80% 60% at 50% 0%, rgba(201,146,42,0.08) 0%, transparent 70%), radial-gradient(ellipse 50% 40% at 20% 80%, rgba(92,26,26,0.15) 0%, transparent 60%), radial-gradient(ellipse 50% 40% at 80% 70%, rgba(125,90,0,0.1) 0%, transparent 60%); }
 .hero-frame { position: absolute; inset: 40px; pointer-events: none; }
@@ -89,20 +82,14 @@ nav a:hover::after { transform: scaleX(1); }
 .hero-cta:hover { box-shadow: 0 12px 48px rgba(201,146,42,0.55); transform: translateY(-2px); }
 .hero-cta:hover::after { opacity: 1; }
 .hero-cta span { position: relative; z-index: 1; }
-
-/* SECTION HEADER */
 .section-header { text-align: center; margin-bottom: 60px; }
 .section-label { font-family: 'Cinzel', serif; font-size: 10px; letter-spacing: 6px; text-transform: uppercase; color: var(--gold-mid); margin-bottom: 14px; display: block; }
 .section-title { font-family: 'Playfair Display', serif; font-size: clamp(32px, 4vw, 52px); font-weight: 700; color: var(--ivory); margin-bottom: 12px; }
 .section-title em { font-style: italic; color: var(--gold-light); }
-
-/* MARQUEE */
 .marquee-wrap { padding: 22px 0; background: linear-gradient(135deg, var(--gold-dark) 0%, var(--gold) 30%, var(--gold-mid) 60%, var(--gold-dark) 100%); overflow: hidden; border-top: 1px solid rgba(255,255,255,0.1); border-bottom: 1px solid rgba(255,255,255,0.1); }
 .marquee-track { display: flex; white-space: nowrap; animation: marquee 22s linear infinite; }
 .marquee-item { font-family: 'Cinzel', serif; font-size: 12px; letter-spacing: 5px; text-transform: uppercase; color: var(--bg-deep); padding: 0 40px; opacity: 0.9; font-weight: 700; }
 .marquee-dot { color: rgba(10,8,4,0.4); font-size: 18px; line-height: 1; padding: 0 10px; }
-
-/* CATEGORIES */
 .categories { padding: 60px 0; border-top: 1px solid var(--border); border-bottom: 1px solid var(--border); background: linear-gradient(180deg, var(--bg-mid) 0%, var(--bg-deep) 100%); }
 .categories-inner { max-width: 1300px; margin: auto; padding: 0 40px; display: flex; gap: 20px; justify-content: center; flex-wrap: wrap; }
 .cat-pill { display: flex; align-items: center; gap: 12px; padding: 14px 28px; border: 1px solid var(--border); cursor: pointer; transition: all 0.35s; background: transparent; color: var(--ivory-dim); font-family: 'Cinzel', serif; font-size: 11px; letter-spacing: 3px; text-transform: uppercase; position: relative; overflow: hidden; }
@@ -110,8 +97,6 @@ nav a:hover::after { transform: scaleX(1); }
 .cat-pill:hover, .cat-pill.active { border-color: var(--gold-mid); color: var(--gold-shine); box-shadow: 0 0 24px rgba(201,146,42,0.2); }
 .cat-pill:hover::before, .cat-pill.active::before { opacity: 1; }
 .cat-icon { font-size: 18px; }
-
-/* PRODUCTS */
 .products-section { padding: 100px 0; background: var(--bg-deep); }
 .container { max-width: 1300px; margin: auto; padding: 0 40px; }
 .products-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 28px; }
@@ -142,163 +127,27 @@ nav a:hover::after { transform: scaleX(1); }
 .add-btn:hover { box-shadow: 0 4px 20px rgba(201,146,42,0.4); }
 .add-btn:hover::after { opacity: 1; }
 .add-btn span { position: relative; z-index: 1; }
-
-/* ══════════════════════════════════════════
-   CIRCULAR GALLERY SECTION
-══════════════════════════════════════════ */
-.gallery-section {
-  padding: 100px 0 0;
-  background: var(--bg-deep);
-  border-top: 1px solid var(--border);
-  position: relative;
-  overflow: hidden;
-}
-
-/* radial ambient glow */
-.gallery-section::before {
-  content: '';
-  position: absolute;
-  width: 1000px; height: 1000px;
-  border-radius: 50%;
-  background: radial-gradient(circle, rgba(201,146,42,0.055) 0%, transparent 68%);
-  top: 50%; left: 50%;
-  transform: translate(-50%, -50%);
-  pointer-events: none;
-  z-index: 0;
-}
-
-/* spinning decorative rings */
-.gallery-ring {
-  position: absolute;
-  border-radius: 50%;
-  border: 1px solid rgba(201,146,42,0.13);
-  top: 50%; left: 50%;
-  pointer-events: none;
-  z-index: 0;
-}
+.gallery-section { padding: 100px 0 0; background: var(--bg-deep); border-top: 1px solid var(--border); position: relative; overflow: hidden; }
+.gallery-section::before { content: ''; position: absolute; width: 1000px; height: 1000px; border-radius: 50%; background: radial-gradient(circle, rgba(201,146,42,0.055) 0%, transparent 68%); top: 50%; left: 50%; transform: translate(-50%, -50%); pointer-events: none; z-index: 0; }
+.gallery-ring { position: absolute; border-radius: 50%; border: 1px solid rgba(201,146,42,0.13); top: 50%; left: 50%; pointer-events: none; z-index: 0; }
 .gallery-ring-1 { width: 860px; height: 860px; margin: -430px 0 0 -430px; animation: spinRing 55s linear infinite; }
 .gallery-ring-2 { width: 980px; height: 980px; margin: -490px 0 0 -490px; border-style: dashed; border-color: rgba(201,146,42,0.06); animation: spinRing 80s linear infinite reverse; }
-
-/* 3D stage */
-.gallery-stage {
-  position: relative;
-  width: 100%;
-  height: 560px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  perspective: 1500px;
-  perspective-origin: 50% 50%;
-  cursor: grab;
-  user-select: none;
-  z-index: 1;
-}
+.gallery-stage { position: relative; width: 100%; height: 560px; display: flex; align-items: center; justify-content: center; perspective: 1500px; perspective-origin: 50% 50%; cursor: grab; user-select: none; z-index: 1; }
 .gallery-stage.dragging { cursor: grabbing; }
-
-.gallery-rotor {
-  position: relative;
-  width: 1px; height: 1px;
-  transform-style: preserve-3d;
-}
-
-.gallery-card {
-  position: absolute;
-  width: 210px; height: 295px;
-  left: -105px; top: -148px;
-}
-
-.gallery-card-inner {
-  width: 100%; height: 100%;
-  border-radius: 2px;
-  overflow: hidden;
-  border: 1px solid var(--border);
-  background: var(--bg-card);
-  position: relative;
-  box-shadow: 0 14px 44px rgba(0,0,0,0.55);
-  transition: border-color 0.4s, box-shadow 0.4s;
-}
-.gallery-card-inner:hover {
-  border-color: var(--border-glow);
-  box-shadow: 0 22px 60px rgba(0,0,0,0.7), 0 0 28px rgba(201,146,42,0.16);
-}
-/* gold corner on hover */
-.gallery-card-inner::after {
-  content: '';
-  position: absolute; top: 0; right: 0;
-  width: 26px; height: 26px;
-  border-top: 1px solid var(--gold-mid);
-  border-right: 1px solid var(--gold-mid);
-  opacity: 0; transition: opacity 0.4s;
-  z-index: 3;
-}
+.gallery-rotor { position: relative; width: 1px; height: 1px; transform-style: preserve-3d; }
+.gallery-card { position: absolute; width: 210px; height: 295px; left: -105px; top: -148px; }
+.gallery-card-inner { width: 100%; height: 100%; border-radius: 2px; overflow: hidden; border: 1px solid var(--border); background: var(--bg-card); position: relative; box-shadow: 0 14px 44px rgba(0,0,0,0.55); transition: border-color 0.4s, box-shadow 0.4s; }
+.gallery-card-inner:hover { border-color: var(--border-glow); box-shadow: 0 22px 60px rgba(0,0,0,0.7), 0 0 28px rgba(201,146,42,0.16); }
+.gallery-card-inner::after { content: ''; position: absolute; top: 0; right: 0; width: 26px; height: 26px; border-top: 1px solid var(--gold-mid); border-right: 1px solid var(--gold-mid); opacity: 0; transition: opacity 0.4s; z-index: 3; }
 .gallery-card-inner:hover::after { opacity: 0.85; }
-
-.gallery-card-inner img {
-  width: 100%; height: 100%;
-  object-fit: cover;
-  object-position: center top;
-  display: block;
-  filter: sepia(12%) saturate(0.85) brightness(0.96);
-  transition: transform 0.55s cubic-bezier(0.25,0.46,0.45,0.94), filter 0.4s;
-}
-.gallery-card-inner:hover img {
-  transform: scale(1.05);
-  filter: sepia(4%) saturate(1.0) brightness(1.0);
-}
-
-/* badge */
-.g-badge {
-  position: absolute;
-  top: 12px; left: 12px;
-  background: linear-gradient(135deg, var(--gold-dark), var(--gold));
-  color: var(--bg-deep);
-  font-family: 'Cinzel', serif;
-  font-size: 8px; letter-spacing: 2px;
-  text-transform: uppercase;
-  padding: 4px 10px;
-  font-weight: 700;
-  z-index: 2;
-}
-
-/* bottom info */
-.g-info {
-  position: absolute;
-  bottom: 0; left: 0; right: 0;
-  padding: 30px 14px 14px;
-  background: linear-gradient(to top, rgba(10,8,4,0.92) 0%, rgba(10,8,4,0.3) 70%, transparent 100%);
-  z-index: 2;
-}
-.g-name {
-  font-family: 'Playfair Display', serif;
-  font-size: 15px; font-weight: 700;
-  color: var(--ivory);
-  line-height: 1.2;
-  margin-bottom: 4px;
-}
-.g-price {
-  font-family: 'Cinzel', serif;
-  font-size: 11px; letter-spacing: 1px;
-  background: linear-gradient(135deg, var(--gold), var(--gold-shine));
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
-}
-
-/* drag hint */
-.gallery-hint {
-  text-align: center;
-  padding: 24px 0 64px;
-  position: relative; z-index: 2;
-}
-.gallery-hint span {
-  font-family: 'Cinzel', serif;
-  font-size: 9px; letter-spacing: 5px;
-  text-transform: uppercase;
-  color: var(--gold-mid);
-  opacity: 0.4;
-}
-
-/* FEATURES */
+.gallery-card-inner img { width: 100%; height: 100%; object-fit: cover; object-position: center top; display: block; filter: sepia(12%) saturate(0.85) brightness(0.96); transition: transform 0.55s cubic-bezier(0.25,0.46,0.45,0.94), filter 0.4s; }
+.gallery-card-inner:hover img { transform: scale(1.05); filter: sepia(4%) saturate(1.0) brightness(1.0); }
+.g-badge { position: absolute; top: 12px; left: 12px; background: linear-gradient(135deg, var(--gold-dark), var(--gold)); color: var(--bg-deep); font-family: 'Cinzel', serif; font-size: 8px; letter-spacing: 2px; text-transform: uppercase; padding: 4px 10px; font-weight: 700; z-index: 2; }
+.g-info { position: absolute; bottom: 0; left: 0; right: 0; padding: 30px 14px 14px; background: linear-gradient(to top, rgba(10,8,4,0.92) 0%, rgba(10,8,4,0.3) 70%, transparent 100%); z-index: 2; }
+.g-name { font-family: 'Playfair Display', serif; font-size: 15px; font-weight: 700; color: var(--ivory); line-height: 1.2; margin-bottom: 4px; }
+.g-price { font-family: 'Cinzel', serif; font-size: 11px; letter-spacing: 1px; background: linear-gradient(135deg, var(--gold), var(--gold-shine)); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; }
+.gallery-hint { text-align: center; padding: 24px 0 64px; position: relative; z-index: 2; }
+.gallery-hint span { font-family: 'Cinzel', serif; font-size: 9px; letter-spacing: 5px; text-transform: uppercase; color: var(--gold-mid); opacity: 0.4; }
 .features-section { padding: 80px 0; background: var(--bg-mid); border-top: 1px solid var(--border); }
 .features-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 1px; background: var(--border); }
 .feature-item { background: var(--bg-mid); padding: 40px 32px; display: flex; flex-direction: column; align-items: center; text-align: center; gap: 14px; transition: background 0.35s; }
@@ -306,8 +155,6 @@ nav a:hover::after { transform: scaleX(1); }
 .feature-icon { font-size: 32px; }
 .feature-title { font-family: 'Cinzel', serif; font-size: 11px; letter-spacing: 3px; text-transform: uppercase; color: var(--gold-mid); }
 .feature-desc { font-family: 'Cormorant Garamond', serif; font-style: italic; font-size: 15px; color: var(--ivory-dim); opacity: 0.65; line-height: 1.5; }
-
-/* FOOTER */
 footer { background: var(--bg-deep); border-top: 1px solid var(--border); padding: 60px 40px 36px; }
 .footer-top { max-width: 1300px; margin: auto; display: grid; grid-template-columns: 2fr 1fr 1fr; gap: 60px; margin-bottom: 48px; }
 .footer-brand h3 { font-family: 'Cinzel', serif; font-size: 20px; font-weight: 700; background: linear-gradient(135deg, var(--gold), var(--gold-shine)); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; margin-bottom: 8px; }
@@ -317,8 +164,6 @@ footer { background: var(--bg-deep); border-top: 1px solid var(--border); paddin
 .footer-col a:hover { opacity: 1; color: var(--gold-light); }
 .footer-bottom { max-width: 1300px; margin: auto; padding-top: 28px; border-top: 1px solid var(--border); display: flex; justify-content: space-between; align-items: center; }
 .footer-copy { font-family: 'Cormorant Garamond', serif; font-size: 13px; color: var(--ivory-dim); opacity: 0.35; }
-
-/* CART */
 .cart-overlay { position: fixed; inset: 0; background: rgba(0,0,0,0.7); backdrop-filter: blur(4px); z-index: 900; opacity: 0; pointer-events: none; transition: opacity 0.4s; }
 .cart-overlay.active { opacity: 1; pointer-events: all; }
 .cart-drawer { position: fixed; right: -520px; top: 0; bottom: 0; width: 500px; background: var(--bg-mid); border-left: 1px solid var(--border); z-index: 1000; display: flex; flex-direction: column; transition: right 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94); }
@@ -358,28 +203,18 @@ footer { background: var(--bg-deep); border-top: 1px solid var(--border); paddin
 .checkout-btn span { position: relative; z-index: 1; }
 .wa-btn { width: 100%; padding: 14px; background: none; border: 1px solid rgba(37,211,102,0.4); color: #25D366; font-family: 'Cinzel', serif; font-size: 11px; letter-spacing: 2px; text-transform: uppercase; cursor: pointer; transition: all 0.35s; margin-top: 12px; display: flex; align-items: center; justify-content: center; gap: 10px; }
 .wa-btn:hover { background: rgba(37,211,102,0.08); border-color: #25D366; }
-
-/* FAB */
 .fab { position: fixed; bottom: 32px; right: 32px; background: #25D366; color: #fff; display: flex; align-items: center; gap: 10px; padding: 14px 22px; border-radius: 50px; text-decoration: none; font-family: 'Cinzel', serif; font-size: 11px; letter-spacing: 2px; text-transform: uppercase; box-shadow: 0 8px 32px rgba(37,211,102,0.35); transition: all 0.35s; z-index: 400; font-weight: 700; }
 .fab:hover { background: #1ebe58; box-shadow: 0 12px 40px rgba(37,211,102,0.5); transform: translateY(-3px); }
-
-/* TOAST */
 .toast { position: fixed; bottom: 100px; right: 32px; background: var(--bg-card); border: 1px solid var(--border-glow); padding: 16px 24px; display: flex; align-items: center; gap: 14px; z-index: 800; transform: translateX(120%); transition: transform 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94); box-shadow: 0 12px 40px rgba(0,0,0,0.6); min-width: 280px; }
 .toast.show { transform: translateX(0); }
 .toast-icon { font-size: 22px; }
 .toast-text { font-family: 'Cormorant Garamond', serif; font-size: 15px; color: var(--ivory); }
 .toast-item { font-family: 'Playfair Display', serif; font-weight: 700; color: var(--gold-light); }
-
-/* ANIMATIONS */
 @keyframes fadeUp { from { opacity: 0; transform: translateY(28px); } to { opacity: 1; transform: translateY(0); } }
 @keyframes marquee { from { transform: translateX(0); } to { transform: translateX(-50%); } }
-@keyframes scrollPulse { 0%, 100% { opacity: 0.5; } 50% { opacity: 1; } }
 @keyframes spinRing { from { transform: rotate(0deg); } to { transform: rotate(360deg); } }
-
 .fade-in-up { opacity: 0; transform: translateY(30px); transition: opacity 0.65s ease, transform 0.65s ease; }
 .fade-in-up.visible { opacity: 1; transform: translateY(0); }
-
-/* RESPONSIVE */
 @media (max-width: 900px) {
   header { padding: 0 24px; }
   .container { padding: 0 20px; }
@@ -398,7 +233,6 @@ footer { background: var(--bg-deep); border-top: 1px solid var(--border); paddin
 </head>
 <body>
 
-<!-- HEADER -->
 <header>
   <div class="logo-wrap">
     <span class="logo-urdu">عوام کی الماری</span>
@@ -416,7 +250,6 @@ footer { background: var(--bg-deep); border-top: 1px solid var(--border); paddin
   </nav>
 </header>
 
-<!-- HERO -->
 <section class="hero">
   <div class="hero-bg"></div>
   <div class="hero-frame">
@@ -434,10 +267,8 @@ footer { background: var(--bg-deep); border-top: 1px solid var(--border); paddin
   </div>
 </section>
 
-<!-- MARQUEE -->
 <div class="marquee-wrap"><div class="marquee-track" id="marqueeTrack"></div></div>
 
-<!-- CATEGORIES -->
 <div class="categories">
   <div class="categories-inner">
     <button class="cat-pill active" onclick="filterProducts('all',event)"><span class="cat-icon">✦</span><span>All Collections</span></button>
@@ -448,7 +279,6 @@ footer { background: var(--bg-deep); border-top: 1px solid var(--border); paddin
   </div>
 </div>
 
-<!-- PRODUCTS -->
 <section class="products-section" id="products">
   <div class="container">
     <div class="section-header">
@@ -460,41 +290,34 @@ footer { background: var(--bg-deep); border-top: 1px solid var(--border); paddin
   </div>
 </section>
 
-<!-- ════════════════════════════════════════════
-     CIRCULAR GALLERY — above features
-════════════════════════════════════════════ -->
 <section class="gallery-section">
   <div class="gallery-ring gallery-ring-1"></div>
   <div class="gallery-ring gallery-ring-2"></div>
-
   <div class="container" style="position:relative;z-index:2;">
     <div class="section-header fade-in-up">
-      <span class="section-label">The Carousel</span>
+      <span class="section-label">Trending</span>
       <h2 class="section-title">Our <em>Signature</em> Pieces</h2>
       <div class="deco-line"><div class="deco-diamond"></div></div>
     </div>
   </div>
-
   <div class="gallery-stage" id="galleryStage">
     <div class="gallery-rotor" id="galleryRotor"></div>
   </div>
-
-  <div class="gallery-hint"><span>← drag to rotate &nbsp;·&nbsp; auto-rotates gently →</span></div>
+  <div class="gallery-hint"><span>← SELECT TO YOUR LIKING →</span></div>
 </section>
 
-<!-- FEATURES -->
 <section class="features-section">
   <div class="container">
     <div class="features-grid">
       <div class="feature-item">
         <div class="feature-icon">🪡</div>
-        <div class="feature-title">Premium Fabric</div>
+        <div class="feature-title">Best Fabric</div>
         <p class="feature-desc">Only the finest cotton, lawn, and chiffon make it to our shelves</p>
       </div>
       <div class="feature-item">
         <div class="feature-icon">📦</div>
-        <div class="feature-title">Swift Delivery</div>
-        <p class="feature-desc">Same-day delivery across Lahore, next-day across Pakistan</p>
+        <div class="feature-title">Fast Delivery</div>
+        <p class="feature-desc">Free delivery across Lahore, fast across Pakistan</p>
       </div>
       <div class="feature-item">
         <div class="feature-icon">✂️</div>
@@ -504,13 +327,12 @@ footer { background: var(--bg-deep); border-top: 1px solid var(--border); paddin
       <div class="feature-item">
         <div class="feature-icon">🔄</div>
         <div class="feature-title">Easy Returns</div>
-        <p class="feature-desc">Hassle-free 7-day returns & exchanges, no questions asked</p>
+        <p class="feature-desc">7-day returns & exchanges, no questions asked</p>
       </div>
     </div>
   </div>
 </section>
 
-<!-- FOOTER -->
 <footer>
   <div class="footer-top">
     <div class="footer-brand">
@@ -534,7 +356,6 @@ footer { background: var(--bg-deep); border-top: 1px solid var(--border); paddin
   </div>
 </footer>
 
-<!-- CART DRAWER -->
 <div class="cart-overlay" id="cartOverlay" onclick="toggleCart()"></div>
 <div class="cart-drawer" id="cartDrawer">
   <div class="cart-header">
@@ -545,29 +366,34 @@ footer { background: var(--bg-deep); border-top: 1px solid var(--border); paddin
   <div class="cart-footer" id="cartFooter"></div>
 </div>
 
-<!-- TOAST -->
 <div class="toast" id="toast">
   <span class="toast-icon">✦</span>
   <div class="toast-text">Added <span class="toast-item" id="toastItem"></span> to YOUR CART</div>
 </div>
 
-<!-- WHATSAPP FAB -->
 <a href="https://wa.me/923364439851" class="fab" target="_blank">
   <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
   WhatsApp
 </a>
 
 <script>
-/* ── PRODUCTS ── */
 const products = [
-  {id:1,name:"Shahi Kurta",      category:"men",   price:3500, badge:"Bestseller",img:10,desc:"Premium cotton kurta, exquisitely embroidered for everyday elegance."},
-  {id:2,name:"Lawn Ensemble",    category:"women", price:4200, badge:"New",       img:20,desc:"Stitched 3-piece lawn suit with hand-block printed dupatta."},
-  {id:3,name:"Little Prince Set",category:"kids",  price:2800, badge:null,        img:30,desc:"Soft cotton shalwar kameez in royal blues and ivory for your little one."},
-  {id:4,name:"Formal Dress Shirt",category:"formal",price:3000,badge:null,        img:40,desc:"Slim-cut formal shirt in Egyptian cotton, perfect for board or banquet."},
-  {id:5,name:"Abaya Royale",     category:"women", price:6500, badge:"Luxury",    img:50,desc:"Open-front abaya in pure crêpe with gold-trim detailing."},
-  {id:6,name:"Heritage Denim",   category:"men",   price:3800, badge:null,        img:60,desc:"Classic straight-fit denim in midnight wash — built to last."},
-  {id:7,name:"Bridal Lehnga",    category:"women", price:18500,badge:"Exclusive", img:70,desc:"Full bridal lehnga set with zari work and heavy stone embellishments."},
-  {id:8,name:"Waistcoat Classic",category:"men",   price:4800, badge:null,        img:80,desc:"Heritage-style Nehru waistcoat in brocade fabric, cut for the modern man."},
+  {id:1, name:"Shahi Kurta",                      category:"men",   price:3500,  badge:"Bestseller", img:10,  desc:"Premium cotton kurta, exquisitely embroidered for everyday elegance."},
+  {id:2, name:"Lawn Ensemble",                    category:"women", price:4200,  badge:"New",        img:20,  desc:"Stitched 3-piece lawn suit with hand-block printed dupatta."},
+  {id:3, name:"Kids EID special",                category:"kids",  price:2800,  badge:null,         img:30,  desc:"Soft cotton shalwar kameez in royal blues and ivory for your little one."},
+  {id:4, name:"Formal Dress Shirt",               category:"formal",price:3000,  badge:null,         img:40,  desc:"Slim-cut formal shirt in Egyptian cotton, perfect for board or banquet."},
+  {id:5, name:"Abaya Royale",                     category:"women", price:6500,  badge:"Luxury",     img:50,  desc:"Open-front abaya in pure crêpe with gold-trim detailing."},
+  {id:6, name:"Heritage Denim",                   category:"men",   price:3800,  badge:null,         img:60,  desc:"Classic straight-fit denim in midnight wash — built to last."},
+  {id:7, name:"Bridal Lehnga",                    category:"women", price:18500, badge:"Exclusive",  img:70,  desc:"Full bridal lehnga set with zari work and heavy stone embellishments."},
+  {id:8, name:"Waistcoat Classic",                category:"men",   price:4800,  badge:null,         img:80,  desc:"Heritage-style Nehru waistcoat in brocade fabric, cut for the modern man."},
+  {id:9, name:"1-Piece Shirt — Stitched",         category:"women", price:1800,  badge:"New",        img:101, desc:"Elegant ready-to-wear stitched shirt in premium fabric — simply slip on and go."},
+  {id:10,name:"1-Piece Shirt — Unstitched",       category:"women", price:1200,  badge:null,         img:102, desc:"Fine unstitched shirt fabric for a custom fit tailored just for you."},
+  {id:11,name:"2-Piece Suit — Stitched",          category:"women", price:3200,  badge:"Bestseller", img:103, desc:"Beautifully stitched 2-piece suit — coordinated shirt and trousers, ready to wear."},
+  {id:12,name:"3-Piece Suit — Stitched",          category:"women", price:4500,  badge:null,         img:104, desc:"Complete stitched 3-piece suit with dupatta — crafted for the modern Pakistani woman."},
+  {id:13,name:"3-Piece Suit — Unstitched",        category:"women", price:2800,  badge:"New",        img:105, desc:"Premium unstitched 3-piece suit fabric — shirt, trouser & dupatta, all in one box."},
+  {id:14,name:"Winter Shawl — Alkaram & Bonanza", category:"women", price:3500,  badge:"Winter",     img:106, desc:"Warm, luxurious winter shawls from Alkaram and Bonanza — perfect for chilly evenings."},
+  {id:15,name:"Summer Shawl — Gul Ahmed",         category:"women", price:2200,  badge:"Summer",     img:107, desc:"Lightweight Gul Ahmed summer shawls in vibrant prints — breezy and effortlessly chic."},
+  {id:16,name:"Stallers — Summer",                category:"women", price:900,   badge:null,         img:108, desc:"Soft, flowy summer stallers in breathable fabric — a wardrobe essential all season long."},
 ];
 
 let cart = JSON.parse(localStorage.getItem('aka_cart_v2')||'[]');
@@ -578,7 +404,7 @@ function renderProducts() {
   const filtered = activeFilter==='all' ? products : products.filter(p=>p.category===activeFilter);
   if (!filtered.length) { grid.innerHTML=`<div style="grid-column:1/-1;text-align:center;padding:60px 0;font-family:'Playfair Display',serif;font-style:italic;font-size:22px;color:var(--ivory-dim);opacity:0.5;">No items in this collection yet</div>`; return; }
   grid.innerHTML = filtered.map((p,i)=>`
-    <div class="product-card fade-in-up" style="transition-delay:${i*0.08}s">
+    <div class="product-card fade-in-up" style="transition-delay:${i*0.06}s">
       ${p.badge?`<div class="badge">${p.badge}</div>`:''}
       <div class="product-image-wrap">
         <img src="https://picsum.photos/500/580?random=${p.img}" alt="${p.name}" loading="lazy">
@@ -643,13 +469,11 @@ function orderWhatsApp() { const lines=cart.map(i=>`• ${i.name} × ${i.qty} = 
 let toastTimer;
 function showToast(name) { const t=document.getElementById('toast'); document.getElementById('toastItem').textContent=name; t.classList.add('show'); clearTimeout(toastTimer); toastTimer=setTimeout(()=>t.classList.remove('show'),2800); }
 
-/* ── MARQUEE ── */
 function buildMarquee() {
   const items=['Premium Fashion',"Lahore's Finest",'Traditional Wear','Modern Elegance','For Every Occasion','Handcrafted Quality','Since Lahore'];
   document.getElementById('marqueeTrack').innerHTML=[...items,...items].map(t=>`<span class="marquee-item">${t}</span><span class="marquee-dot">◆</span>`).join('');
 }
 
-/* ── CIRCULAR GALLERY ── */
 (function initGallery() {
   const ITEMS = [
     {name:"Shahi Kurta",        price:"Rs 3,500",  tag:"Bestseller", img:"https://images.unsplash.com/photo-1594938298603-c8148c4b4357?w=600&auto=format&fit=crop&q=80"},
@@ -659,69 +483,30 @@ function buildMarquee() {
     {name:"Bridal Lehnga",      price:"Rs 18,500", tag:"Exclusive",  img:"https://images.unsplash.com/photo-1610030469983-98e550d6193c?w=600&auto=format&fit=crop&q=80"},
     {name:"Heritage Denim",     price:"Rs 3,800",  tag:"Classic",    img:"https://images.unsplash.com/photo-1542272604-787c3835535d?w=600&auto=format&fit=crop&q=80"},
     {name:"Formal Dress Shirt", price:"Rs 3,000",  tag:"SS25",       img:"https://images.unsplash.com/photo-1489987707025-afc232f7ea0f?w=600&auto=format&fit=crop&q=80"},
-    {name:"Little Prince Set",  price:"Rs 2,800",  tag:"Kids",       img:"https://images.unsplash.com/photo-1503944583220-79d8926ad5e2?w=600&auto=format&fit=crop&q=80"},
+    {name:"Kids EID special",  price:"Rs 2,800",  tag:"Kids",       img:"https://images.unsplash.com/photo-1503944583220-79d8926ad5e2?w=600&auto=format&fit=crop&q=80"},
   ];
-
-  const RADIUS     = 400;
-  const AUTO_SPEED = 0.10;
-  const ANGLE_STEP = 360 / ITEMS.length;
-
-  let rotDeg    = 0;
-  let dragging  = false;
-  let lastX     = 0;
-
-  const rotor = document.getElementById('galleryRotor');
-  const stage = document.getElementById('galleryStage');
-
-  // Build cards
-  ITEMS.forEach((item, i) => {
-    const angle = i * ANGLE_STEP;
-    const card  = document.createElement('div');
-    card.className = 'gallery-card';
-    card.style.transform = `rotateY(${angle}deg) translateZ(${RADIUS}px)`;
-    card.innerHTML = `
-      <div class="gallery-card-inner">
-        <img src="${item.img}" alt="${item.name}" draggable="false" loading="lazy">
-        <div class="g-badge">${item.tag}</div>
-        <div class="g-info">
-          <div class="g-name">${item.name}</div>
-          <div class="g-price">${item.price}</div>
-        </div>
-      </div>`;
+  const RADIUS=400, AUTO_SPEED=0.1, ANGLE_STEP=360/ITEMS.length;
+  let rotDeg=0, dragging=false, lastX=0;
+  const rotor=document.getElementById('galleryRotor'), stage=document.getElementById('galleryStage');
+  ITEMS.forEach((item,i)=>{
+    const angle=i*ANGLE_STEP, card=document.createElement('div');
+    card.className='gallery-card';
+    card.style.transform=`rotateY(${angle}deg) translateZ(${RADIUS}px)`;
+    card.innerHTML=`<div class="gallery-card-inner"><img src="${item.img}" alt="${item.name}" draggable="false" loading="lazy"><div class="g-badge">${item.tag}</div><div class="g-info"><div class="g-name">${item.name}</div><div class="g-price">${item.price}</div></div></div>`;
     rotor.appendChild(card);
   });
-
-  const cards = rotor.querySelectorAll('.gallery-card');
-
-  function tick() {
-    if (!dragging) rotDeg += AUTO_SPEED;
-    rotor.style.transform = `rotateY(${rotDeg}deg)`;
-    cards.forEach((card, i) => {
-      const rel  = ((i * ANGLE_STEP + rotDeg) % 360 + 360) % 360;
-      const norm = rel > 180 ? 360 - rel : rel;
-      card.style.opacity = Math.max(0.1, 1 - (norm / 180) * 0.9);
-    });
-    requestAnimationFrame(tick);
-  }
+  const cards=rotor.querySelectorAll('.gallery-card');
+  function tick(){ if(!dragging)rotDeg+=AUTO_SPEED; rotor.style.transform=`rotateY(${rotDeg}deg)`; cards.forEach((card,i)=>{ const rel=((i*ANGLE_STEP+rotDeg)%360+360)%360, norm=rel>180?360-rel:rel; card.style.opacity=Math.max(0.1,1-(norm/180)*0.9); }); requestAnimationFrame(tick); }
   requestAnimationFrame(tick);
-
-  // Mouse
-  stage.addEventListener('mousedown', e => { dragging=true; lastX=e.clientX; stage.classList.add('dragging'); });
-  window.addEventListener('mousemove', e => { if (!dragging) return; rotDeg += (e.clientX-lastX)*0.3; lastX=e.clientX; });
-  window.addEventListener('mouseup', () => { dragging=false; stage.classList.remove('dragging'); });
-
-  // Touch
-  stage.addEventListener('touchstart', e => { dragging=true; lastX=e.touches[0].clientX; }, {passive:true});
-  stage.addEventListener('touchmove',  e => { if (!dragging) return; rotDeg += (e.touches[0].clientX-lastX)*0.3; lastX=e.touches[0].clientX; }, {passive:true});
-  stage.addEventListener('touchend',   () => { dragging=false; });
+  stage.addEventListener('mousedown',e=>{dragging=true;lastX=e.clientX;stage.classList.add('dragging');});
+  window.addEventListener('mousemove',e=>{if(!dragging)return;rotDeg+=(e.clientX-lastX)*0.3;lastX=e.clientX;});
+  window.addEventListener('mouseup',()=>{dragging=false;stage.classList.remove('dragging');});
+  stage.addEventListener('touchstart',e=>{dragging=true;lastX=e.touches[0].clientX;},{passive:true});
+  stage.addEventListener('touchmove',e=>{if(!dragging)return;rotDeg+=(e.touches[0].clientX-lastX)*0.3;lastX=e.touches[0].clientX;},{passive:true});
+  stage.addEventListener('touchend',()=>{dragging=false;});
 })();
 
-/* ── INTERSECTION OBSERVER ── */
-const observer = new IntersectionObserver(entries => {
-  entries.forEach(el => { if (el.isIntersecting) { el.target.classList.add('visible'); observer.unobserve(el.target); } });
-}, {threshold:0.1});
-
-/* ── INIT ── */
+const observer=new IntersectionObserver(entries=>{entries.forEach(el=>{if(el.isIntersecting){el.target.classList.add('visible');observer.unobserve(el.target);}});},{threshold:0.1});
 buildMarquee();
 renderProducts();
 renderCart();

@@ -146,8 +146,7 @@ nav a:hover::after { transform: scaleX(1); }
 .g-info { position: absolute; bottom: 0; left: 0; right: 0; padding: 30px 14px 14px; background: linear-gradient(to top, rgba(10,8,4,0.92) 0%, rgba(10,8,4,0.3) 70%, transparent 100%); z-index: 2; }
 .g-name { font-family: 'Playfair Display', serif; font-size: 15px; font-weight: 700; color: var(--ivory); line-height: 1.2; margin-bottom: 4px; }
 .g-price { font-family: 'Cinzel', serif; font-size: 11px; letter-spacing: 1px; background: linear-gradient(135deg, var(--gold), var(--gold-shine)); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; }
-.gallery-hint { text-align: center; padding: 24px 0 64px; position: relative; z-index: 2; }
-.gallery-hint span { font-family: 'Cinzel', serif; font-size: 9px; letter-spacing: 5px; text-transform: uppercase; color: var(--gold-mid); opacity: 0.4; }
+.gallery-hint { display: none; }
 .features-section { padding: 80px 0; background: var(--bg-mid); border-top: 1px solid var(--border); }
 .features-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 1px; background: var(--border); }
 .feature-item { background: var(--bg-mid); padding: 40px 32px; display: flex; flex-direction: column; align-items: center; text-align: center; gap: 14px; transition: background 0.35s; }
@@ -155,12 +154,17 @@ nav a:hover::after { transform: scaleX(1); }
 .feature-icon { font-size: 32px; }
 .feature-title { font-family: 'Cinzel', serif; font-size: 11px; letter-spacing: 3px; text-transform: uppercase; color: var(--gold-mid); }
 .feature-desc { font-family: 'Cormorant Garamond', serif; font-style: italic; font-size: 15px; color: var(--ivory-dim); opacity: 0.65; line-height: 1.5; }
+.wip-section { padding: 60px 40px; background: var(--bg-deep); border-top: 1px solid var(--border); text-align: center; }
+.wip-inner { max-width: 780px; margin: auto; }
+.wip-text { font-family: 'Cormorant Garamond', serif; font-style: italic; font-size: 17px; color: var(--ivory-dim); line-height: 1.8; opacity: 0.8; margin-bottom: 32px; }
+.wip-delivery-main { font-family: 'Cinzel', serif; font-size: 18px; letter-spacing: 5px; text-transform: uppercase; background: linear-gradient(135deg, var(--gold), var(--gold-shine)); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; margin-bottom: 10px; }
+.wip-delivery-sub { font-family: 'Cinzel', serif; font-size: 17px; letter-spacing: 4px; text-transform: uppercase; color: var(--gold-mid); opacity: 0.85; }
 footer { background: var(--bg-deep); border-top: 1px solid var(--border); padding: 60px 40px 36px; }
 .footer-top { max-width: 1300px; margin: auto; display: grid; grid-template-columns: 2fr 1fr 1fr; gap: 60px; margin-bottom: 48px; }
 .footer-brand h3 { font-family: 'Cinzel', serif; font-size: 20px; font-weight: 700; background: linear-gradient(135deg, var(--gold), var(--gold-shine)); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; margin-bottom: 8px; }
 .footer-brand p { font-family: 'Cormorant Garamond', serif; font-style: italic; font-size: 15px; color: var(--ivory-dim); opacity: 0.55; line-height: 1.7; max-width: 300px; }
 .footer-col h4 { font-family: 'Cinzel', serif; font-size: 10px; letter-spacing: 4px; text-transform: uppercase; color: var(--gold-mid); margin-bottom: 18px; }
-.footer-col a { display: block; font-family: 'Cormorant Garamond', serif; font-size: 16px; color: var(--ivory-dim); text-decoration: none; margin-bottom: 10px; opacity: 0.55; transition: opacity 0.3s, color 0.3s; }
+.footer-col a { display: block; font-family: 'Cormorant Garamond', serif; font-size: 16px; color: var(--ivory-dim); text-decoration: none; margin-bottom: 10px; opacity: 0.55; transition: opacity 0.3s, color 0.3s; cursor: pointer; }
 .footer-col a:hover { opacity: 1; color: var(--gold-light); }
 .footer-bottom { max-width: 1300px; margin: auto; padding-top: 28px; border-top: 1px solid var(--border); display: flex; justify-content: space-between; align-items: center; }
 .footer-copy { font-family: 'Cormorant Garamond', serif; font-size: 13px; color: var(--ivory-dim); opacity: 0.35; }
@@ -210,6 +214,30 @@ footer { background: var(--bg-deep); border-top: 1px solid var(--border); paddin
 .toast-icon { font-size: 22px; }
 .toast-text { font-family: 'Cormorant Garamond', serif; font-size: 15px; color: var(--ivory); }
 .toast-item { font-family: 'Playfair Display', serif; font-weight: 700; color: var(--gold-light); }
+
+/* ── Themed Checkout Modal ── */
+.modal-backdrop { position: fixed; inset: 0; background: rgba(0,0,0,0.82); backdrop-filter: blur(6px); z-index: 1100; opacity: 0; pointer-events: none; transition: opacity 0.4s ease; display: flex; align-items: center; justify-content: center; padding: 20px; }
+.modal-backdrop.active { opacity: 1; pointer-events: all; }
+.modal-box { background: var(--bg-mid); border: 1px solid var(--border-glow); max-width: 500px; width: 100%; position: relative; box-shadow: 0 40px 100px rgba(0,0,0,0.8), 0 0 60px rgba(201,146,42,0.12); transform: translateY(24px) scale(0.97); transition: transform 0.45s cubic-bezier(0.25,0.46,0.45,0.94); }
+.modal-backdrop.active .modal-box { transform: translateY(0) scale(1); }
+.modal-corner { position: absolute; width: 28px; height: 28px; border-color: var(--gold-mid); border-style: solid; opacity: 0.55; }
+.modal-corner.tl { top: -1px; left: -1px; border-width: 2px 0 0 2px; }
+.modal-corner.tr { top: -1px; right: -1px; border-width: 2px 2px 0 0; }
+.modal-corner.bl { bottom: -1px; left: -1px; border-width: 0 0 2px 2px; }
+.modal-corner.br { bottom: -1px; right: -1px; border-width: 0 2px 2px 0; }
+.modal-inner { padding: 48px 44px 40px; text-align: center; }
+.modal-emblem { font-size: 36px; margin-bottom: 20px; display: block; }
+.modal-eyebrow { font-family: 'Cinzel', serif; font-size: 9px; letter-spacing: 6px; text-transform: uppercase; color: var(--gold-mid); margin-bottom: 14px; display: block; opacity: 0.85; }
+.modal-title { font-family: 'Playfair Display', serif; font-size: 28px; font-weight: 700; color: var(--ivory); margin-bottom: 6px; line-height: 1.2; }
+.modal-title em { font-style: italic; color: var(--gold-light); }
+.modal-deco { margin: 18px 0; }
+.modal-body { font-family: 'Cormorant Garamond', serif; font-style: italic; font-size: 17px; color: var(--ivory-dim); line-height: 1.75; opacity: 0.8; margin-bottom: 32px; }
+.modal-actions { display: flex; flex-direction: column; gap: 12px; }
+.modal-wa-btn { width: 100%; padding: 16px; background: none; border: 1px solid rgba(37,211,102,0.5); color: #25D366; font-family: 'Cinzel', serif; font-size: 11px; letter-spacing: 2px; text-transform: uppercase; cursor: pointer; transition: all 0.35s; display: flex; align-items: center; justify-content: center; gap: 10px; }
+.modal-wa-btn:hover { background: rgba(37,211,102,0.09); border-color: #25D366; box-shadow: 0 0 24px rgba(37,211,102,0.15); }
+.modal-dismiss { background: none; border: 1px solid var(--border); color: var(--ivory-dim); font-family: 'Cinzel', serif; font-size: 10px; letter-spacing: 3px; text-transform: uppercase; padding: 12px 24px; cursor: pointer; transition: all 0.3s; width: 100%; }
+.modal-dismiss:hover { border-color: var(--gold-mid); color: var(--gold-light); }
+
 @keyframes fadeUp { from { opacity: 0; transform: translateY(28px); } to { opacity: 1; transform: translateY(0); } }
 @keyframes marquee { from { transform: translateX(0); } to { transform: translateX(-50%); } }
 @keyframes spinRing { from { transform: rotate(0deg); } to { transform: rotate(360deg); } }
@@ -228,6 +256,7 @@ footer { background: var(--bg-deep); border-top: 1px solid var(--border); paddin
   .gallery-ring-1 { width: 600px; height: 600px; margin: -300px 0 0 -300px; }
   .gallery-ring-2 { width: 700px; height: 700px; margin: -350px 0 0 -350px; }
   .gallery-stage { height: 380px; }
+  .modal-inner { padding: 36px 28px 30px; }
 }
 </style>
 </head>
@@ -235,14 +264,12 @@ footer { background: var(--bg-deep); border-top: 1px solid var(--border); paddin
 
 <header>
   <div class="logo-wrap">
-    <span class="logo-urdu">عوام کی الماری</span>
     <span class="logo-main">Awaam Ki Almirah</span>
   </div>
   <nav>
-    <a href="#">Men</a>
-    <a href="#">Women</a>
-    <a href="#">Kids</a>
-    <a href="#">Bridal</a>
+    <a href="#products" onclick="filterProducts('men', event); return false;">Gents</a>
+    <a href="#products" onclick="filterProducts('women', event); return false;">Ladies</a>
+    <a href="#products" onclick="filterProducts('kids', event); return false;">Kids</a>
     <button class="cart-trigger" onclick="toggleCart()">
       <span>YOUR CART</span>
       <span class="cart-count" id="cartCount">0</span>
@@ -272,8 +299,8 @@ footer { background: var(--bg-deep); border-top: 1px solid var(--border); paddin
 <div class="categories">
   <div class="categories-inner">
     <button class="cat-pill active" onclick="filterProducts('all',event)"><span class="cat-icon">✦</span><span>All Collections</span></button>
-    <button class="cat-pill" onclick="filterProducts('men',event)"><span class="cat-icon">⚜</span><span>Men</span></button>
-    <button class="cat-pill" onclick="filterProducts('women',event)"><span class="cat-icon">✿</span><span>Women</span></button>
+    <button class="cat-pill" onclick="filterProducts('men',event)"><span class="cat-icon">⚜</span><span>Gents</span></button>
+    <button class="cat-pill" onclick="filterProducts('women',event)"><span class="cat-icon">✿</span><span>Ladies</span></button>
     <button class="cat-pill" onclick="filterProducts('kids',event)"><span class="cat-icon">❋</span><span>Kids</span></button>
     <button class="cat-pill" onclick="filterProducts('formal',event)"><span class="cat-icon">◈</span><span>Formal</span></button>
   </div>
@@ -303,7 +330,7 @@ footer { background: var(--bg-deep); border-top: 1px solid var(--border); paddin
   <div class="gallery-stage" id="galleryStage">
     <div class="gallery-rotor" id="galleryRotor"></div>
   </div>
-  <div class="gallery-hint"><span>← SELECT TO YOUR LIKING →</span></div>
+  <div class="gallery-hint"></div>
 </section>
 
 <section class="features-section">
@@ -333,6 +360,17 @@ footer { background: var(--bg-deep); border-top: 1px solid var(--border); paddin
   </div>
 </section>
 
+<section class="wip-section">
+  <div class="wip-inner">
+    <div class="deco-line" style="margin-bottom:32px;"><div class="deco-diamond"></div></div>
+    <p class="wip-text">Awaam ki almirah is a work in progress. The website is constantly improved with new updates. New arrivals come in everyday. Contact through WhatsApp for now and you will be showed a number of varieties present, you can choose whichever one you like and proceed to checkout through WhatsApp.</p>
+    <div class="deco-line" style="margin-bottom:28px;"><div class="deco-diamond"></div></div>
+    <div class="wip-delivery-main">Delivery All Over Pakistan</div>
+    <div class="wip-delivery-sub">Free Delivery in Lahore</div>
+    <div class="deco-line" style="margin-top:28px;"><div class="deco-diamond"></div></div>
+  </div>
+</section>
+
 <footer>
   <div class="footer-top">
     <div class="footer-brand">
@@ -341,13 +379,18 @@ footer { background: var(--bg-deep); border-top: 1px solid var(--border); paddin
     </div>
     <div class="footer-col">
       <h4>Navigate</h4>
-      <a href="#">New Arrivals</a><a href="#">Men's Collection</a>
-      <a href="#">Women's Collection</a><a href="#">Kids Wear</a><a href="#">Bridal</a>
+      <a href="#products" onclick="filterProducts('all', event); return false;">New Arrivals</a>
+      <a href="#products" onclick="filterProducts('men', event); return false;">Gents' Collection</a>
+      <a href="#products" onclick="filterProducts('women', event); return false;">Ladies' Collection</a>
+      <a href="#products" onclick="filterProducts('kids', event); return false;">Kids Wear</a>
     </div>
     <div class="footer-col">
       <h4>Contact</h4>
-      <a href="#">WhatsApp Support</a><a href="#">Sizing Guide</a>
-      <a href="#">Returns Policy</a><a href="#">Lahore Flagship Store</a>
+      <!-- CHANGE 1: WhatsApp Support now links to the business number -->
+      <a href="https://wa.me/923364439851" target="_blank">WhatsApp Support</a>
+      <a href="#">Sizing Guide</a>
+      <a href="#">Returns Policy</a>
+      <a href="#">Lahore Flagship Store</a>
     </div>
   </div>
   <div class="footer-bottom">
@@ -366,6 +409,32 @@ footer { background: var(--bg-deep); border-top: 1px solid var(--border); paddin
   <div class="cart-footer" id="cartFooter"></div>
 </div>
 
+<!-- CHANGE 2: Themed checkout modal replacing the browser alert -->
+<div class="modal-backdrop" id="checkoutModal" onclick="handleModalBackdropClick(event)">
+  <div class="modal-box" id="checkoutModalBox">
+    <div class="modal-corner tl"></div>
+    <div class="modal-corner tr"></div>
+    <div class="modal-corner bl"></div>
+    <div class="modal-corner br"></div>
+    <div class="modal-inner">
+      <span class="modal-emblem">✦</span>
+      <span class="modal-eyebrow">Awaam Ki Almirah</span>
+      <h2 class="modal-title">Online Checkout<br><em>Coming Soon</em></h2>
+      <div class="modal-deco">
+        <div class="deco-line"><div class="deco-diamond"></div></div>
+      </div>
+      <p class="modal-body">Our online payment gateway is currently being crafted with the same care as our garments. In the meantime, place your order instantly via WhatsApp — we'll confirm your selection, arrange sizing, and ensure delivery to your doorstep.</p>
+      <div class="modal-actions">
+        <button class="modal-wa-btn" onclick="orderWhatsApp(); closeCheckoutModal();">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+          Order via WhatsApp
+        </button>
+        <button class="modal-dismiss" onclick="closeCheckoutModal()">Continue Browsing</button>
+      </div>
+    </div>
+  </div>
+</div>
+
 <div class="toast" id="toast">
   <span class="toast-icon">✦</span>
   <div class="toast-text">Added <span class="toast-item" id="toastItem"></span> to YOUR CART</div>
@@ -378,22 +447,30 @@ footer { background: var(--bg-deep); border-top: 1px solid var(--border); paddin
 
 <script>
 const products = [
-  {id:1, name:"Shahi Kurta",                      category:"men",   price:3500,  badge:"Bestseller", img:10,  desc:"Premium cotton kurta, exquisitely embroidered for everyday elegance."},
-  {id:2, name:"Lawn Ensemble",                    category:"women", price:4200,  badge:"New",        img:20,  desc:"Stitched 3-piece lawn suit with hand-block printed dupatta."},
-  {id:3, name:"Kids EID special",                category:"kids",  price:2800,  badge:null,         img:30,  desc:"Soft cotton shalwar kameez in royal blues and ivory for your little one."},
-  {id:4, name:"Formal Dress Shirt",               category:"formal",price:3000,  badge:null,         img:40,  desc:"Slim-cut formal shirt in Egyptian cotton, perfect for board or banquet."},
-  {id:5, name:"Abaya Royale",                     category:"women", price:6500,  badge:"Luxury",     img:50,  desc:"Open-front abaya in pure crêpe with gold-trim detailing."},
-  {id:6, name:"Heritage Denim",                   category:"men",   price:3800,  badge:null,         img:60,  desc:"Classic straight-fit denim in midnight wash — built to last."},
-  {id:7, name:"Bridal Lehnga",                    category:"women", price:18500, badge:"Exclusive",  img:70,  desc:"Full bridal lehnga set with zari work and heavy stone embellishments."},
-  {id:8, name:"Waistcoat Classic",                category:"men",   price:4800,  badge:null,         img:80,  desc:"Heritage-style Nehru waistcoat in brocade fabric, cut for the modern man."},
-  {id:9, name:"1-Piece Shirt — Stitched",         category:"women", price:1800,  badge:"New",        img:101, desc:"Elegant ready-to-wear stitched shirt in premium fabric — simply slip on and go."},
-  {id:10,name:"1-Piece Shirt — Unstitched",       category:"women", price:1200,  badge:null,         img:102, desc:"Fine unstitched shirt fabric for a custom fit tailored just for you."},
-  {id:11,name:"2-Piece Suit — Stitched",          category:"women", price:3200,  badge:"Bestseller", img:103, desc:"Beautifully stitched 2-piece suit — coordinated shirt and trousers, ready to wear."},
-  {id:12,name:"3-Piece Suit — Stitched",          category:"women", price:4500,  badge:null,         img:104, desc:"Complete stitched 3-piece suit with dupatta — crafted for the modern Pakistani woman."},
-  {id:13,name:"3-Piece Suit — Unstitched",        category:"women", price:2800,  badge:"New",        img:105, desc:"Premium unstitched 3-piece suit fabric — shirt, trouser & dupatta, all in one box."},
-  {id:14,name:"Winter Shawl — Alkaram & Bonanza", category:"women", price:3500,  badge:"Winter",     img:106, desc:"Warm, luxurious winter shawls from Alkaram and Bonanza — perfect for chilly evenings."},
-  {id:15,name:"Summer Shawl — Gul Ahmed",         category:"women", price:2200,  badge:"Summer",     img:107, desc:"Lightweight Gul Ahmed summer shawls in vibrant prints — breezy and effortlessly chic."},
-  {id:16,name:"Stallers — Summer",                category:"women", price:900,   badge:null,         img:108, desc:"Soft, flowy summer stallers in breathable fabric — a wardrobe essential all season long."},
+  // ── Gents ──
+  {id:1, name:"Kurtay",                           category:"men",   price:800,   badge:null,         img:10,  desc:"Classic everyday kurta in premium cotton — effortlessly elegant for any occasion."},
+  {id:2, name:"Suit — Kameez & Trouser",          category:"men",   price:1200,  badge:"Bestseller", img:11,  desc:"Coordinated stitched kameez and trouser set, tailored for the modern gentleman."},
+  {id:3, name:"Suit — Unstitched",                category:"men",   price:1500,  badge:null,         img:12,  desc:"Fine unstitched suit fabric — get it tailored exactly to your measurements."},
+  {id:4, name:"Dress Shirts",                     category:"men",   price:1200,  badge:null,         img:13,  desc:"Sharp dress shirts in crisp fabric — perfect for the office or a formal gathering."},
+  {id:5, name:"U Pents",                          category:"men",   price:1500,  badge:null,         img:14,  desc:"Well-cut trousers in quality fabric — a wardrobe essential for every gentleman."},
+  {id:6, name:"Jeans",                            category:"men",   price:800,   badge:null,         img:15,  desc:"Classic straight-fit jeans in durable denim — built for everyday comfort and style."},
+  // ── Ladies ──
+  {id:9,  name:"1 Piece",                         category:"women", price:600,   badge:null,         img:101, desc:"A timeless single-piece shirt in fine fabric — light, elegant, and effortlessly wearable every day."},
+  {id:10, name:"Trouser",                         category:"women", price:500,   badge:null,         img:102, desc:"Comfortable, well-cut trousers in quality fabric — a wardrobe staple for every woman."},
+  {id:11, name:"Trouser — Sapphire",              category:"women", price:800,   badge:"Brand",      img:103, desc:"Premium Sapphire trousers crafted in refined fabric — polished style from morning to evening."},
+  {id:12, name:"2 Piece Suit",                    category:"women", price:1400,  badge:null,         img:104, desc:"Coordinated 2-piece suit — a classic shirt and trouser pairing for the modern Pakistani woman."},
+  {id:13, name:"2 Piece Suit — Brand",            category:"women", price:1600,  badge:"Brand",      img:105, desc:"Branded 2-piece suit in premium fabric — beautifully finished and ready to impress."},
+  {id:14, name:"1 Piece Shirt (U)",               category:"women", price:1200,  badge:null,         img:106, desc:"Unstitched single-piece shirt fabric — choose your style and have it tailored to perfection."},
+  {id:15, name:"2 Piece Suit — Applec Work",      category:"women", price:1700,  badge:"New",        img:107, desc:"Intricately embellished 2-piece suit with delicate applec work — made to turn heads."},
+  {id:16, name:"1 Piece Shirt — Applec Work",     category:"women", price:1300,  badge:null,         img:108, desc:"Elegant single-piece shirt adorned with fine applec detailing — grace in every stitch."},
+  // ── Kids ──
+  {id:17, name:"Kids Kurtay (Male)",              category:"kids",  price:500,   badge:null,         img:30,  desc:"Adorable kurta for boys in soft, breathable cotton — perfect for every occasion."},
+  {id:18, name:"Kids Trouser (Female)",           category:"kids",  price:300,   badge:null,         img:31,  desc:"Comfortable and stylish trousers for girls — easy to wear, easy to love."},
+  {id:19, name:"Kids 2 Piece (Female)",           category:"kids",  price:700,   badge:null,         img:32,  desc:"Charming 2-piece suit for girls — a coordinated set that keeps little ones looking their best."},
+  {id:20, name:"Kids Frock (Female)",             category:"kids",  price:700,   badge:null,         img:33,  desc:"Delightful frock for girls in vibrant fabric — twirl-worthy style for every celebration."},
+  // ── Formal ──
+  {id:21,name:"Formal Dress Shirt",               category:"formal",price:3000,  badge:null,         img:40,  desc:"Slim-cut formal shirt in Egyptian cotton, perfect for board or banquet."},
+  {id:22,name:"Waistcoat Classic",                category:"formal",price:4800,  badge:null,         img:80,  desc:"Heritage-style Nehru waistcoat in brocade fabric, cut for the modern man."},
 ];
 
 let cart = JSON.parse(localStorage.getItem('aka_cart_v2')||'[]');
@@ -411,7 +488,7 @@ function renderProducts() {
         <div class="product-overlay"><button class="quick-view" onclick="addToCart(${p.id})">Add to Wardrobe</button></div>
       </div>
       <div class="product-info">
-        <div class="product-category">${p.category}</div>
+        <div class="product-category">${p.category === 'men' ? 'Gents' : p.category === 'women' ? 'Ladies' : p.category === 'kids' ? 'Kids' : p.category}</div>
         <h3 class="product-name">${p.name}</h3>
         <p class="product-desc">${p.desc}</p>
         <div class="product-footer">
@@ -433,7 +510,7 @@ function renderCart() {
     <div class="cart-item">
       <img class="cart-item-img" src="https://picsum.photos/200/240?random=${item.img}" alt="${item.name}">
       <div class="cart-item-info">
-        <span class="cart-item-cat">${item.category}</span>
+        <span class="cart-item-cat">${item.category === 'men' ? 'Gents' : item.category === 'women' ? 'Ladies' : item.category === 'kids' ? 'Kids' : item.category}</span>
         <div class="cart-item-name">${item.name}</div>
         <div class="cart-item-controls">
           <button class="qty-btn" onclick="changeQty(${i},-1)">−</button>
@@ -463,8 +540,36 @@ function addToCart(id) { const p=products.find(x=>x.id===id); if(!p)return; cons
 function removeItem(i) { cart.splice(i,1); renderCart(); }
 function changeQty(i,d) { cart[i].qty+=d; if(cart[i].qty<=0)cart.splice(i,1); renderCart(); }
 function toggleCart() { document.getElementById('cartDrawer').classList.toggle('active'); document.getElementById('cartOverlay').classList.toggle('active'); document.body.style.overflow=document.getElementById('cartDrawer').classList.contains('active')?'hidden':''; }
-function filterProducts(cat,e) { activeFilter=cat; document.querySelectorAll('.cat-pill').forEach(b=>b.classList.remove('active')); if(e&&e.currentTarget)e.currentTarget.classList.add('active'); renderProducts(); }
-function proceedCheckout() { alert('Checkout coming soon! Use WhatsApp for instant orders.'); }
+
+function filterProducts(cat, e) {
+  activeFilter = cat;
+  document.querySelectorAll('.cat-pill').forEach(b => b.classList.remove('active'));
+  document.querySelectorAll('.cat-pill').forEach(b => {
+    const onclick = b.getAttribute('onclick') || '';
+    if (onclick.includes("'" + cat + "'")) b.classList.add('active');
+  });
+  if (cat === 'all') {
+    const firstPill = document.querySelector('.cat-pill');
+    if (firstPill) firstPill.classList.add('active');
+  }
+  renderProducts();
+  document.getElementById('products').scrollIntoView({ behavior: 'smooth' });
+  if (e && e.preventDefault) e.preventDefault();
+}
+
+// CHANGE 2: Themed modal replaces browser alert
+function proceedCheckout() {
+  document.getElementById('checkoutModal').classList.add('active');
+  document.body.style.overflow = 'hidden';
+}
+function closeCheckoutModal() {
+  document.getElementById('checkoutModal').classList.remove('active');
+  document.body.style.overflow = '';
+}
+function handleModalBackdropClick(e) {
+  if (e.target === document.getElementById('checkoutModal')) closeCheckoutModal();
+}
+
 function orderWhatsApp() { const lines=cart.map(i=>`• ${i.name} × ${i.qty} = Rs ${(i.price*i.qty).toLocaleString()}`).join('%0A'); const total=cart.reduce((s,i)=>s+i.price*i.qty,0); window.open(`https://wa.me/923364439851?text=Assalam o Alaikum! I'd like to order:%0A${lines}%0A%0ATotal: Rs ${total.toLocaleString()}`,'_blank'); }
 let toastTimer;
 function showToast(name) { const t=document.getElementById('toast'); document.getElementById('toastItem').textContent=name; t.classList.add('show'); clearTimeout(toastTimer); toastTimer=setTimeout(()=>t.classList.remove('show'),2800); }
@@ -483,7 +588,7 @@ function buildMarquee() {
     {name:"Bridal Lehnga",      price:"Rs 18,500", tag:"Exclusive",  img:"https://images.unsplash.com/photo-1610030469983-98e550d6193c?w=600&auto=format&fit=crop&q=80"},
     {name:"Heritage Denim",     price:"Rs 3,800",  tag:"Classic",    img:"https://images.unsplash.com/photo-1542272604-787c3835535d?w=600&auto=format&fit=crop&q=80"},
     {name:"Formal Dress Shirt", price:"Rs 3,000",  tag:"SS25",       img:"https://images.unsplash.com/photo-1489987707025-afc232f7ea0f?w=600&auto=format&fit=crop&q=80"},
-    {name:"Kids EID special",  price:"Rs 2,800",  tag:"Kids",       img:"https://images.unsplash.com/photo-1503944583220-79d8926ad5e2?w=600&auto=format&fit=crop&q=80"},
+    {name:"Kids EID special",   price:"Rs 2,800",  tag:"Kids",       img:"https://images.unsplash.com/photo-1503944583220-79d8926ad5e2?w=600&auto=format&fit=crop&q=80"},
   ];
   const RADIUS=400, AUTO_SPEED=0.1, ANGLE_STEP=360/ITEMS.length;
   let rotDeg=0, dragging=false, lastX=0;

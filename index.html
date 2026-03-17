@@ -448,7 +448,7 @@ footer { background: var(--bg-deep); border-top: 1px solid var(--border); paddin
 <script>
 const products = [
   // ── Gents ──
-  {id:1, name:"Kurtay",                           category:"men",   price:800,   badge:null,         img:10,  desc:"Classic everyday kurta in premium cotton — effortlessly elegant for any occasion."},
+  {id:1, name:"Kurtay",                           category:"men",   price:800,   badge:null,         img:10,  desc:"Classic everyday kurta in premium cotton — effortlessly elegant for any occasion.", link:"kurtay.html"},
   {id:2, name:"Suit — Kameez & Trouser",          category:"men",   price:1200,  badge:"Bestseller", img:11,  desc:"Coordinated stitched kameez and trouser set, tailored for the modern gentleman."},
   {id:3, name:"Suit — Unstitched",                category:"men",   price:1500,  badge:null,         img:12,  desc:"Fine unstitched suit fabric — get it tailored exactly to your measurements."},
   {id:4, name:"Dress Shirts",                     category:"men",   price:1200,  badge:null,         img:13,  desc:"Sharp dress shirts in crisp fabric — perfect for the office or a formal gathering."},
@@ -485,7 +485,7 @@ function renderProducts() {
       ${p.badge?`<div class="badge">${p.badge}</div>`:''}
       <div class="product-image-wrap">
         <img src="https://picsum.photos/500/580?random=${p.img}" alt="${p.name}" loading="lazy">
-        <div class="product-overlay"><button class="quick-view" onclick="addToCart(${p.id})">Add to Wardrobe</button></div>
+        <div class="product-overlay"><button class="quick-view" onclick="${p.link ? `window.location.href='${p.link}'` : `addToCart(${p.id})`}">${p.link ? 'View Collection' : 'Add to Wardrobe'}</button></div>
       </div>
       <div class="product-info">
         <div class="product-category">${p.category === 'men' ? 'Gents' : p.category === 'women' ? 'Ladies' : p.category === 'kids' ? 'Kids' : p.category}</div>
@@ -493,7 +493,7 @@ function renderProducts() {
         <p class="product-desc">${p.desc}</p>
         <div class="product-footer">
           <div class="product-price"><span class="price-label">Price</span><span class="price-value">Rs ${p.price.toLocaleString()}</span></div>
-          <button class="add-btn" onclick="addToCart(${p.id})"><span>+ Add</span></button>
+          <button class="add-btn" onclick="${p.link ? `window.location.href='${p.link}'` : `addToCart(${p.id})`}"><span>${p.link ? 'View →' : '+ Add'}</span></button>
         </div>
       </div>
     </div>`).join('');
